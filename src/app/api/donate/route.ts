@@ -11,7 +11,7 @@ import {
     PublicKey,
     SystemProgram,
     Transaction,
-    clusterApiUrl,
+    // clusterApiUrl,
 } from "@solana/web3.js";
 
 // GET request handler
@@ -27,6 +27,7 @@ export async function GET(request: Request) {
                 {
                     label: "Donate 0.1 SOL",
                     href: `${url.href}?amount=0.1`,
+                    type: "transaction"
                 },
             ],
         },
@@ -80,8 +81,9 @@ export async function POST(request: Request) {
         fields: {
             transaction,
             message: "Transaction created",
+            type: "transaction"
         },
-        type: "transaction" // 将 type 移到这里
+
     });
     return new Response(JSON.stringify(payload), {
         headers: ACTIONS_CORS_HEADERS,
