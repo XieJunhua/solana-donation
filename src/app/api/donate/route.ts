@@ -18,7 +18,8 @@ import {
 export async function GET(request: Request) {
     const url = new URL(request.url);
     const payload: ActionGetResponse = {
-        icon: "/images/icon.png", // Local icon path
+        // icon: "/images/icon.png", // Local icon path
+        icon: "https://solana-action.vercel.app/solana_devs.jpg",
         title: "Donate to Rahul",
         description: "Support Rahul by donating SOL.",
         label: "Donate",
